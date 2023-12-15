@@ -4,6 +4,8 @@ kind: Kustomization
 metadata:
   name: podinfo
   namespace: flux-system
+resources:
+  - podinfo-ingress.yaml
 spec:
   interval: 30m0s
   path: ./kustomize
@@ -15,8 +17,6 @@ spec:
   targetNamespace: default
   timeout: 3m0s
   wait: true
-  resources:
-    - podinfo-ingress.yaml
   patches:
     - patch: |-
         apiVersion: autoscaling/v2
