@@ -4,8 +4,6 @@ kind: Kustomization
 metadata:
   name: podinfo
   namespace: flux-system
-resources:
-  - podinfo-ingress.yaml
 spec:
   interval: 30m0s
   path: ./kustomize
